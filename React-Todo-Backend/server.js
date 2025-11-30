@@ -7,11 +7,10 @@ import todoRoutes from "./src/routes/todos.js";
 dotenv.config();
 const app = express();
 
-// Update CORS to allow your Netlify domain
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:3000",
-  process.env.FRONTEND_URL, // Add your Netlify URL here
+  process.env.FRONTEND_URL,
 ].filter(Boolean);
 
 app.use(
