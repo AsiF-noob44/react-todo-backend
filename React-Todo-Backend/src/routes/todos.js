@@ -1,6 +1,6 @@
 import express from "express";
 const router = express.Router();
-import Todo from "../models/todo.js";
+import Todo from "../models/Todo.js";
 import {
   validateObjectId,
   validateTodoInput,

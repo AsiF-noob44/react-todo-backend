@@ -8,12 +8,16 @@ dotenv.config();
 const app = express();
 
 // Update CORS to allow your Netlify domain
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:3000",
+  process.env.FRONTEND_URL, // Add your Netlify URL here
+].filter(Boolean);
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://your-app-name.netlify.app", // Add after deploying frontend
-    ],
+    origin: allowedOrigins,
+    credentials: true,
   })
 );
 
